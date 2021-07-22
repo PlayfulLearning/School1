@@ -56,7 +56,7 @@ section .title{
 
 .intro{
     /* height: 40vh; */
-    background-color:#fff6ea;
+    background-color:#f0f1f3;
     /* rgb(51, 51, 51); fbf9f6*/
     color: #000;
     display: flex;
@@ -855,7 +855,7 @@ background-color: #19b674;
 
 .filter input[type="radio"]:checked + label{
 
-    background-color: #3F7BE0;
+    background-color: #000;
     color: #fff;
     /* font-weight: 600; */
     /* border: 2px solid #444; */
@@ -863,7 +863,7 @@ background-color: #19b674;
 }
 
 .filter input[type="radio"]:checked{
-    background-color: #3F7BE0;
+    background-color: #000;
     color: #fff;
 }
 
@@ -872,7 +872,7 @@ background-color: #19b674;
 }
 
 .filter label:hover {
-    background-color: #eee;
+    background-color: rgb(224, 226, 228);
     border: 2px #444;
     border-radius: 25px;
 }
@@ -956,8 +956,8 @@ transition: all 5s ease-in-out;
 /* dropdown menu */
 .dropbtn {
     font-family: 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    background-color:#dfd7cc;
-    color: #5c5954;
+    background-color:#fff;
+    /* color: #5c5954; */
     /* padding: 16px; */
     font-size: 16px;
     border: none;
@@ -967,8 +967,8 @@ transition: all 5s ease-in-out;
   }
   
   .dropbtn:hover, .dropbtn:focus {
-    background-color:#ada79e;
-    color: #f1e9dd;
+    background-color:#20d489;
+    color: #fff;
   }
   
   .dropdown {
@@ -994,6 +994,6 @@ transition: all 5s ease-in-out;
     display: block;
   }
   
-  .dropdown a:hover {background-color: #dfd7cc;}
+  .dropdown a:hover {background-color: #e0faef;}
   
   .show {display: block;}

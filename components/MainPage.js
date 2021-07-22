@@ -2,7 +2,7 @@ import Navbar from './Navbar.js';
 import About, {ShowHomeImage} from './About.js';
 import Filter,  {ShowThemes} from './Filter.js';
 import Footer from './Footer.js';
-import Projects, {ProjectItems} from './Projects.js';
+import Projects, {ProjectItems, handleProjectFilter} from './Projects.js';
 
 
 export default function MainPage(data){
@@ -10,10 +10,10 @@ export default function MainPage(data){
         ${Navbar(data.about)}
         ${About(data.about)}
         ${Filter(data.themes)}
-        ${Projects(data.projects, data.about)}
+        ${Projects(data.projects, data.themes, data.about)}
         ${Footer(data.about)}
     `
-
+    handleProjectFilter(data);
     window.showThemes = function() {
         console.log('main dropdown');
         document.getElementById("myDropdown").classList.toggle("show");

@@ -5,7 +5,17 @@ export default function Filter(themes){
     <section id="filter" class="intro">
         <div class="text-wrapper">
             ${ThemeDropdown(themes)}
+            <div class="row filter text-center">
+                <input type="radio" name="project-filter" id="prj-all value="all" checked>
+                <label for="prj-all">All</label>
+                
+                ${ThemeList(themes)}
 
+            </div>
+        </div>
+    </section>
+    <section id="filter">
+        <div class="text-wrapper">
             <h1 class="title">${themes[0].name}</h1>
             <p>${themes[0].description}</p>
             <div class="project-img">
@@ -38,4 +48,12 @@ export function ThemeItems(themes) {
     return themes.map(d=>`
         <a href="#home">${(d.name)}</a>
         `).join('');
+}
+
+export function ThemeList(themes){
+    return themes.map(d=>`
+        <input type="radio" name="project-filter" id="prj-${d.name}" value="${d.name}" >
+        <label for="prj-${d.name}">${d.name}</label>
+
+    `).join('');
 }
