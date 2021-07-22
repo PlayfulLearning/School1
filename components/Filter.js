@@ -6,7 +6,7 @@ export default function Filter(themes){
         <div class="text-wrapper">
             ${ThemeDropdown(themes)}
             <div class="row filter text-center">
-                <input type="radio" name="project-filter" id="prj-all value="all" checked>
+                <input type="radio" name="project-filter" id="prj-all" value="all" checked>
                 <label for="prj-all">All</label>
                 
                 ${ThemeList(themes)}
