@@ -4,7 +4,6 @@ import ProjectPage from './components/ProjectPage.js';
 import Navbar from './components/Navbar.js';
 import Filter from './components/Filter.js'
 
-
 Promise.all([
       d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRzuPHi-ZjhY9HfLv7HjMCCwy6NyzWJyxjj03fHfSJtTHAkCkvoN8Lm705rWP-y5LFMDmXj-9rBe_qC/pub?output=csv"),
       d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSNhuYWG4ylr1-xZSDcBunRrKJyLqPIC37VOGoW8QG0Knve2YeIem2az2t0vVXz1769WALBxjs3U_J2/pub?output=csv"),
@@ -29,8 +28,9 @@ Promise.all([
             speed: 500,
             thumbnail: true
         });
-    }  
+    } 
 });
+
 
 
 
