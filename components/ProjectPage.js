@@ -78,7 +78,7 @@ export function GetMediaArr(videoString, imageString){
                     "controls": true
                 }
             },
-            thumb: GetVideoURL(videoString)
+            thumb: "assets/images/video-placeholder.png"
         };
 
         // mediaString = videoString.concat("," + imageString);
