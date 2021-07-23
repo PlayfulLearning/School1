@@ -680,6 +680,27 @@ background-color: #19b674;
     box-shadow: 0 10px 20px rgb(0 0 0 / 30%);
 }
 
+.project-items{
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+    /* 1fr 14em */
+    /* gap: 1em;
+    grid-gap: 1em; */
+    grid-auto-rows: minmax(300px, auto);
+
+    /* display: -webkit-flex; */
+    flex-direction: row; 
+    -webkit-flex-direction: row;
+    flex-wrap: wrap; 
+    -webkit-flex-wrap: wrap;
+    /* justify-content: center;  */
+    /* -webkit-justify-content: center; */
+    width:100%;
+    margin:0 auto;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
 .project-item{
     flex-basis: 100em;
     border-radius: 5px;
