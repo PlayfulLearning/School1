@@ -4,7 +4,7 @@ export default function Projects(projects, themes, about){
     return `
     <section id="content">
         <div id="theme" class="text-wrapper theme-info">
-        ${DefaultInfo()}
+        ${DefaultInfo(projects)}
         </div>    
 
         <div id="projects" class="wrapper">
@@ -17,9 +17,10 @@ export default function Projects(projects, themes, about){
     </section>`;
 }
 
-export function DefaultInfo(){
+export function DefaultInfo(projects){
+    let projectNumber = projects.length;
     return `
-    <h1 class="title">All Projects</h1>
+    <h1 class="title">All Projects (${projectNumber})</h1>
     `
 }
 
@@ -85,7 +86,7 @@ export function handleProjectFilter(data){
             });
             // console.log('filteredProjects', filteredProjects);
             // console.log('checkedTheme', checkedTheme);
-            document.querySelector('.theme-info').innerHTML = UpdateThemeInfo(checkedTheme);
+            document.querySelector('.theme-info').innerHTML = UpdateThemeInfo(filteredProjects, checkedTheme);
             document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, filteredProjects);
         }
     
@@ -93,9 +94,10 @@ export function handleProjectFilter(data){
     
 }
 
-export function UpdateThemeInfo(theme){
+export function UpdateThemeInfo(projects, theme){
+    let projectNumber = projects.length;
     return `
-        <h1 class="title">${theme[0].name}</h1>
+        <h1 class="title">${theme[0].name} (${projectNumber})</h1>
         <p>${theme[0].description}</p>
         <div class="project-img">
         </div>
