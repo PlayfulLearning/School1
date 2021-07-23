@@ -4,7 +4,6 @@ export default function Filter(themes){
     return `
     <section id="filter" class="intro">
         <div class="text-wrapper">
-            ${ThemeDropdown(themes)}
             <div class="row filter text-center">
                 <input type="radio" name="project-filter" id="prj-all" value="all" checked>
                 <label for="prj-all">All</label>
@@ -14,20 +13,18 @@ export default function Filter(themes){
             </div>
         </div>
     </section>
-    <section id="filter">
-        <div class="text-wrapper">
-            <h1 class="title">${themes[0].name}</h1>
-            <p>${themes[0].description}</p>
-            <div class="project-img">
-            </div>
-            <a href="${themes[0].buttonlink}" target="_blank">
-                <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${themes[0].buttonlabel}</button>
-            </a>
-            <a href="${themes[0].resources}" target="_blank">
-                <button class="button" style="margin-top: 30px; margin-bottom: 50px;">More Resources</button>
-            </a>
+
+    <section id="theme">
+        <div class="text-wrapper theme-info">
+        ${DefaultInfo()}
         </div>    
     </section>`
+}
+
+export function DefaultInfo(){
+    return `
+    <h1 class="title">All Projects</h1>
+    `
 }
 
 export function ThemeDropdown(themes){

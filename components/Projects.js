@@ -63,16 +63,38 @@ export function handleProjectFilter(data){
         let checked = event.target.value; //Array.from(conds).filter(d=>d.checked).map(d=>d.value);
         console.log(checked);
         if (checked==='all'){
+            document.querySelector('.theme-info').innerHTML = DefaultInfo();
             document.querySelector('.project-list').innerHTML = ProjectItems(data.about, data.projects);
         }else{
-            let filtered = data.projects.filter(d=>{
+            let filteredProjects = data.projects.filter(d=>{
                 // return d.id.some(id=>checked === checked.toLowerCase());
                 return d.id === checked;
             });
-            console.log('filtered', filtered);
-            document.querySelector('.project-list').innerHTML += SubmitButton(data.about) + ProjectItems(data.about, filtered);
+
+            let checkedTheme = data.themes.filter(d=>{
+                return d.id === checked;
+            });
+            console.log('filteredProjects', filteredProjects);
+            console.log('checkedTheme', checkedTheme);
+            document.querySelector('.theme-info').innerHTML = UpdateThemeInfo(checkedTheme);
+            document.querySelector('.project-list').innerHTML += SubmitButton(data.about) + ProjectItems(data.about, filteredProjects);
         }
     
     }));
     
+}
+
+export function UpdateThemeInfo(theme){
+    return `
+        <h1 class="title">${theme[0].name}</h1>
+        <p>${theme[0].description}</p>
+        <div class="project-img">
+        </div>
+        <a href="${theme[0].buttonlink}" target="_blank">
+            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${theme[0].buttonlabel}</button>
+        </a>
+        <a href="${theme[0].resources}" target="_blank">
+            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">More Resources</button>
+        </a>
+    `
 }
