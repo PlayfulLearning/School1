@@ -1,6 +1,5 @@
 import Navbar from './Navbar.js';
 import About, {ShowHomeImage} from './About.js';
-import Filter,  {ShowThemes} from './Filter.js';
 import Footer from './Footer.js';
 import Projects, {ProjectItems, handleProjectFilter} from './Projects.js';
 
@@ -8,8 +7,7 @@ import Projects, {ProjectItems, handleProjectFilter} from './Projects.js';
 export default function MainPage(data){
     document.querySelector('.container').innerHTML = `
         ${Navbar(data.about)}
-        ${About(data.about)}
-        ${Filter(data.themes)}
+        ${About(data.about, data.themes)}
         ${Projects(data.projects, data.themes, data.about)}
         ${Footer(data.about)}
     `

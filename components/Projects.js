@@ -2,7 +2,11 @@ import GetImageURL, {GetTeaserURL} from './Images.js';
 
 export default function Projects(projects, themes, about){
     return `
-    
+    <section id="theme">
+        <div class="text-wrapper theme-info">
+        ${DefaultInfo()}
+        </div>    
+    </section>
     <section id="projects">
         <div class="wrapper">
             <div class="project-list">
@@ -12,6 +16,12 @@ export default function Projects(projects, themes, about){
             </div>
         </div>
     </section>`;
+}
+
+export function DefaultInfo(){
+    return `
+    <h1 class="title">All Projects</h1>
+    `
 }
 
 export function SubmitButton(about){
