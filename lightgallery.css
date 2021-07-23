@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'lg';
-  src: url("../fonts/lg.ttf?io9a6k") format("truetype"), url("../fonts/lg.woff?io9a6k") format("woff"), url("../fonts/lg.svg?io9a6k#lg") format("svg");
+  src: url("../assets/fonts/lg.ttf?io9a6k") format("truetype"), url("../assets/fonts/lg.woff?io9a6k") format("woff"), url("../assets/fonts/lg.svg?io9a6k#lg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;

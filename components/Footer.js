@@ -2,7 +2,7 @@ export default function Footer(about){
     return `
     <footer>
         <div class="footer-content">
-            <img src="${about[0].ceeologo}" div class="logo">
+            <img src="assets/images/CEEO-logo.png" div class="logo">
         </div>
     </footer>`
 }

@@ -27,7 +27,7 @@ export function DefaultInfo(projects){
 export function SubmitButton(about){
     return `
         <div class="project-box">
-            <img src="assets/global/add-placeholder.png" div class="teaser">
+            <img src="assets/images/add-placeholder.png" div class="teaser">
             <div class="info">
                 <div class="project-overview">
                     <div class="project-title">
