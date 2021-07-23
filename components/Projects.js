@@ -74,7 +74,7 @@ export function handleProjectFilter(data){
         console.log(checked);
         if (checked==='all'){
             document.querySelector('.theme-info').innerHTML = DefaultInfo();
-            document.querySelector('.project-list').innerHTML = ProjectItems(data.about, data.projects);
+            document.querySelector('.project-list').innerHTML += SubmitButton(data.about) + ProjectItems(data.about, data.projects);
         }else{
             let filteredProjects = data.projects.filter(d=>{
                 // return d.id.some(id=>checked === checked.toLowerCase());
