@@ -71,7 +71,7 @@ export function handleProjectFilter(data){
     conds.forEach(cond=>cond.addEventListener('change', function(event){
         
         let checked = event.target.value; //Array.from(conds).filter(d=>d.checked).map(d=>d.value);
-        console.log(checked);
+        // console.log(checked);
         if (checked==='all'){
             document.querySelector('.theme-info').innerHTML = DefaultInfo();
             document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, data.projects);
@@ -84,8 +84,8 @@ export function handleProjectFilter(data){
             let checkedTheme = data.themes.filter(d=>{
                 return d.id === checked;
             });
-            console.log('filteredProjects', filteredProjects);
-            console.log('checkedTheme', checkedTheme);
+            // console.log('filteredProjects', filteredProjects);
+            // console.log('checkedTheme', checkedTheme);
             document.querySelector('.theme-info').innerHTML = UpdateThemeInfo(checkedTheme);
             document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, filteredProjects);
         }

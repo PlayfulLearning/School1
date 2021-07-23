@@ -310,6 +310,7 @@ section{
 
 .project-info{
     margin-left: 20px;
+    margin-top: 40px
 }
 
 .project-info .title{
@@ -476,9 +477,9 @@ code {
 }
 
 .inline-gallery-container {
-    width: 700px;
-    height: 500px;
-    position: relative;
+    width: 100%;
+    height: 400px;
+    /* position: relative; */
 }
 
   

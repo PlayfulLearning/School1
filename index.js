@@ -19,7 +19,6 @@ Promise.all([
     }else{
         let project = data.projects.find(d=>d.title===params.get('project'));
         Navbar('project')
-        Filter(themes);
         ProjectPage(project, about);
         hljs.highlightAll();
         lightGallery(document.getElementById('lightgallery'), {
