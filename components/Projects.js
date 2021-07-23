@@ -2,13 +2,12 @@ import GetImageURL, {GetTeaserURL} from './Images.js';
 
 export default function Projects(projects, themes, about){
     return `
-    <section id="theme">
-        <div class="text-wrapper theme-info">
+    <section id="content">
+        <div id="theme" class="text-wrapper theme-info">
         ${DefaultInfo()}
         </div>    
-    </section>
-    <section id="projects">
-        <div class="wrapper">
+
+        <div id="projects" class="wrapper">
             <div class="project-list">
                 ${SubmitButton(about)}
                 ${ProjectItems(about, projects)}
