@@ -8,7 +8,6 @@ export default function ProjectPage(project, about){
     document.querySelector('.container').innerHTML = `
         ${Navbar('project')}
         ${ProjectDetail(project, about)}
-        ${Footer(about)}
     `
     // SetGallery();
     SetLightgallery(GetMediaArr(project.video, project.images));
