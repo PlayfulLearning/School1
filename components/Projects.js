@@ -53,7 +53,7 @@ export function ProjectItems(about, projects){
                     ${d.subtitle}
                 </div>
                 <div class="project-authors">
-                    ${d.authors}
+                    By ${d.authors}
                 </div>
                     
             </div>
