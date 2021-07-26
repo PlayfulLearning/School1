@@ -73,16 +73,19 @@ export function handleProjectFilter(data){
         let checked = event.target.value; //Array.from(conds).filter(d=>d.checked).map(d=>d.value);
         // console.log(checked);
         if (checked==='all'){
-            document.querySelector('.theme-info').innerHTML = DefaultInfo();
+            document.querySelector('.theme-info').innerHTML = DefaultInfo(data.projects);
             document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, data.projects);
         }else{
+            checked = checked.replace(/ /g, "").toLowerCase();
             let filteredProjects = data.projects.filter(d=>{
                 // return d.id.some(id=>checked === checked.toLowerCase());
-                return d.id === checked;
+                d.hackathon = d.hackathon.replace(/ /g, "").toLowerCase();
+                return d.hackathon === checked;
             });
 
             let checkedTheme = data.themes.filter(d=>{
-                return d.id === checked;
+                d.name = d.name.replace(/ /g, "").toLowerCase();
+                return d.name === checked;
             });
             // console.log('filteredProjects', filteredProjects);
             // console.log('checkedTheme', checkedTheme);

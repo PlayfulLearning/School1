@@ -51,8 +51,8 @@ export function ThemeItems(themes) {
 
 export function ThemeList(themes){
     return themes.map(d=>`
-        <input type="radio" name="project-filter" id="prj-${d.id}" value="${d.id}" >
-        <label for="prj-${d.id}">${d.name}</label>
+        <input type="radio" name="project-filter" id="prj-${d.name}" value="${d.name}" >
+        <label for="prj-${d.name}">${d.name}</label>
 
     `).join('');
 }
