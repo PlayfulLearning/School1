@@ -402,11 +402,15 @@ section{
 .project-authors{
     color: #a7a6a6;
     margin-top: 0px;
+    font-size: 0.9em;
+    line-height: 1.6em;
 }
 
 .project-subtitle{
     color: #000;
     margin-bottom: 5px;
+    font-size: 0.9em;
+    line-height: 1.6em;
 }
 
 .project-tags{
