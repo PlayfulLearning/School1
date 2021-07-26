@@ -84,8 +84,8 @@ export function handleProjectFilter(data){
             });
 
             let checkedTheme = data.themes.filter(d=>{
-                d.name = d.name.replace(/ /g, "").toLowerCase();
-                return d.name === checked;
+                d.id = d.name.replace(/ /g, "").toLowerCase();
+                return d.id === checked;
             });
             // console.log('filteredProjects', filteredProjects);
             // console.log('checkedTheme', checkedTheme);
