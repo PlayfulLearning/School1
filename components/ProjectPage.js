@@ -34,6 +34,7 @@ export function ProjectDetail(d, about){
                     </p>
                     ${CodeSnippet(d.code)}
                     ${CustomButton(d.url, d.urlLabel)}
+                    ${FilesButton(d.files)}
                     <div class="project-tags" style="color: #a7a6a6;">
                         By ${d.authors}
                     </div>
@@ -113,6 +114,19 @@ export function CustomButton(url, urlLabel){
         return `
         <a href="${url}" target="_blank">
             <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${urlLabel}</button>
+        </a>
+
+        `;
+    }
+}
+
+export function FilesButton(files){
+    if (files==="") {
+        return '';
+    }else {
+        return `
+        <a href="${files}" target="_blank">
+            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">Download Files</button>
         </a>
 
         `;
@@ -227,3 +241,34 @@ export function ImageItems(images){
 }
 
 
+export function capture(video, scaleFactor) {
+	if(scaleFactor == null){
+		scaleFactor = 1;
+	}
+	var w = video.videoWidth * scaleFactor;
+	var h = video.videoHeight * scaleFactor;
+	var canvas = document.createElement('canvas');
+		canvas.width  = w;
+	    canvas.height = h;
+	var ctx = canvas.getContext('2d');
+		ctx.drawImage(video, 0, 0, w, h);
+    return canvas;
+} 
+
+
+/**
+ * Invokes the <code>capture</code> function and attaches the canvas element to the DOM.
+ */
+ function shoot(){
+	var video  = document.getElementById(videoId);
+	var output = document.getElementById('output');
+	var canvas = capture(video, scaleFactor);
+		canvas.onclick = function(){
+			window.open(this.toDataURL());
+		};
+	snapshots.unshift(canvas);
+	output.innerHTML = '';
+	for(var i=0; i<4; i++){
+		output.appendChild(snapshots[i]);
+	}
+}
