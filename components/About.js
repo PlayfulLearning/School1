@@ -4,7 +4,7 @@ export default function About(about, themes){
     return `
     <section id="about" class="intro">
         <div class="text-wrapper">
-            <h1 class="project-title">${about[0].name}</h1>
+            <h1 class="site-title">${about[0].name}</h1>
                 ${ShowHomeImage(about[0].image)}
         </div>
     </section>

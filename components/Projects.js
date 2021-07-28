@@ -20,7 +20,7 @@ export default function Projects(projects, themes, about){
 export function DefaultInfo(projects){
     let projectNumber = projects.length;
     return `
-    <p>${projectNumber} submitted</p>
+    <p class="project-number">${projectNumber} submitted</p>
     `
 }
 
@@ -43,22 +43,25 @@ export function ProjectItems(about, projects){
     return projects.map(d=>`
         
         <div class="project-box">
+            
             <img src="${(GetTeaserURL(d.images))}" div class="teaser">
             <div class="info">
                 <div class="project-overview">
+                    <div class="project-theme">
+                        ${d.hackathon}
+                    </div>
                     <div class="project-title">
                         <a href="?project=${d.title}"><strong>${d.title}</strong></a>
                     </div>
-                <div class="project-subtitle">
-                    ${d.subtitle}
-                </div>
-                <div class="project-authors">
-                    By ${d.authors}
-                </div>
-                    
+                    <div class="project-subtitle">
+                        ${d.subtitle}
+                    </div>
+                    <div class="project-authors">
+                        By ${d.authors}
+                    </div>
+                </div>    
             </div>
         </div> 
-    </div>
     `).join('');
 }
 
@@ -79,8 +82,8 @@ export function handleProjectFilter(data){
             checked = checked.replace(/ /g, "").toLowerCase();
             let filteredProjects = data.projects.filter(d=>{
                 // return d.id.some(id=>checked === checked.toLowerCase());
-                d.hackathon = d.hackathon.replace(/ /g, "").toLowerCase();
-                return d.hackathon === checked;
+                d.id = d.hackathon.replace(/ /g, "").toLowerCase();
+                return d.id === checked;
             });
 
             let checkedTheme = data.themes.filter(d=>{
@@ -109,7 +112,7 @@ export function UpdateThemeInfo(projects, theme){
         ${(ResourcesButton(theme[0].resources))}
         </div>
         
-        <p>${projectNumber} submitted</p>
+        <p class="project-number">${projectNumber} submitted</p>
         
     `
 }

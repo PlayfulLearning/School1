@@ -77,9 +77,12 @@ section .title{
 
 #filter{
     border-bottom: 1px solid rgba(30, 33, 83, 0.1);
-    margin-top: 75px;
+    margin-top: 78px;
 }
 
+.project-number{
+    color: #a7a6a6;
+}
 .theme-container {
     border-bottom: 1px solid rgba(49, 56, 150, 0.1);
 }
@@ -323,7 +326,16 @@ section{
     width: 100%;
 }
 
+.site-title{
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: 'DM Sans', 'Space Grotesk', 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
 .project-title{
+    line-height: 1.6rem;
     margin-top: 0;
     font-size: 1.2rem;
     margin-bottom: 0px;
@@ -435,9 +447,25 @@ section{
 
 .project-subtitle{
     color: #000;
-    margin-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     font-size: 0.9em;
     line-height: 1.6em;
+}
+
+.project-theme {
+    font-family: 'DM Sans', 'Helvetica', sans-serif;
+    font-size: 1rem;
+    padding: 0rem .4rem;
+    border-radius: 5px;
+    position: absolute;
+    display: inline-block;
+    top: 8px;
+    left: 8px;
+    z-index: 1000;
+    background-color:rgba(153, 152, 152, 0.404);
+    color: #fff;
+    font-weight: bold;
 }
 
 .project-info .project-subtitle{
@@ -642,8 +670,9 @@ code {
 }
 
 .project-box{
+    position: relative;
     flex-basis: 14em;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color:#fff;
     margin: 15px;
 
@@ -676,7 +705,7 @@ code {
     /* margin-top: 20px; */
     /* width: 100%; */
     /* max-width: 260px; */
-    padding: .7rem 0.6rem;
+    padding: .7rem 1.2rem;
     /* margin-right: 5px; */
     transition-duration: 0.2s;
     /* display: block; */
@@ -772,7 +801,7 @@ background-color: #19b674;
 }
 
 .teaser{
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
     width: 100%;
     height: 250px;
     object-fit:cover;
