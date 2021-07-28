@@ -5,11 +5,11 @@ export default function About(about, themes){
     <section id="about" class="intro">
         <div class="text-wrapper">
             <h1 class="project-title">${about[0].name}</h1>
-            <div class="project-img">
-            </div>
                 ${ShowHomeImage(about[0].image)}
         </div>
-        <div id="filter" class="text-wrapper">
+    </section>
+    <section id="filter">
+        <div class="text-wrapper">
             <div class="row filter text-center">
                 <input type="radio" name="project-filter" id="prj-all" value="all" checked>
                 <label for="prj-all">All</label>

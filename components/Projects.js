@@ -20,7 +20,7 @@ export default function Projects(projects, themes, about){
 export function DefaultInfo(projects){
     let projectNumber = projects.length;
     return `
-    <h1 class="title">All Projects (${projectNumber})</h1>
+    <p>${projectNumber} submitted</p>
     `
 }
 
@@ -31,7 +31,7 @@ export function SubmitButton(about){
             <div class="info">
                 <div class="project-overview">
                     <div class="project-title">
-                        <a href="${about[0].form}" target="_blank"><strong>Submit Project → </strong></a>
+                        <a href="${about[0].form}" target="_blank"><strong>Submit → </strong></a>
                     </div>
                 </div>
             </div>
@@ -100,15 +100,15 @@ export function handleProjectFilter(data){
 export function UpdateThemeInfo(projects, theme){
     let projectNumber = projects.length;
     return `
-        <h1 class="title">${theme[0].name} (${projectNumber})</h1>
+        <div class="theme-container">
+        <h1 class="title">${theme[0].name} </h1>
         <p>${theme[0].description}</p>
-        <div class="project-img">
-        </div>
         <a href="${theme[0].buttonlink}" target="_blank">
             <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${theme[0].buttonlabel}</button>
         </a>
-        
+        </div>
         ${(ResourcesButton(theme[0].resources))}
+        <p>${projectNumber} submitted</p>
         
     `
 }
@@ -119,7 +119,7 @@ export function ResourcesButton(resources) {
     }else {
     return `
     <a href="${resources}" target="_blank">
-        <button class="button" style="margin-top: 30px; margin-bottom: 50px;">More Resources</button>
+        <button class="button" style="margin-top: 30px; margin-bottom: 50px;">Resources</button>
     </a>
     `
     }

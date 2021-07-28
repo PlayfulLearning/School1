@@ -9,7 +9,7 @@ html, body {
 
 body {
     /* font-family: 'Roboto', "Segoe UI", "Helvetica Neue", Arial, sans-serif; */
-    font-family: 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Roboto', 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     /* Questrial  Manrope   Gothic A1  Inter font-family: 'Google Sans', "Segoe UI", "Helvetica Neue", Arial, sans-serif; */
     font-size: calc(1.1 * 1rem);
     line-height: 1.8em;
@@ -24,7 +24,7 @@ p {
 }
 .intro .title{
     margin-top: 0.35em;
-    margin-bottom: 0px !important;
+    /* margin-bottom: 0px !important; */
     font-size: 2.6rem;
     line-height: 1.6em;
     /* color: #20d489; */
@@ -32,16 +32,18 @@ p {
 
 
 section .title{
-    font-family: 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: 'DM Sans', 'Space Grotesk', 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     /* VT323   Press Start 2P   Lexend*/
-    font-size: 1.8rem;
+    font-size: 2.6rem;
     /* text-align: center; */
     font-weight: black;
-    line-height: 1.6em;
+    line-height: 1.2em;
+    margin-bottom: 0;
+    margin-top: 15px;
 }
 
 .nav-title{
-    font-family: 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family:  'Space Grotesk', 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 0.8rem;
 }
 
@@ -56,8 +58,10 @@ section .title{
 
 .intro{
     /* height: 40vh; */
-    background-color:#f0f1f3;
+    /* background-color:rgb(51, 51, 51); */
     /* rgb(51, 51, 51); fbf9f6*/
+    border-bottom: 1px solid rgba(49, 56, 150, 0.1);
+    /* background-color: rgba(139, 140, 153, 0.08); */
     color: #000;
     display: flex;
     flex-direction: column;
@@ -66,6 +70,13 @@ section .title{
     /* padding: 40px; */
 }
 
+#filter{
+    border-bottom: 1px solid rgba(49, 56, 150, 0.1);
+}
+
+.theme-container {
+    border-bottom: 1px solid rgba(49, 56, 150, 0.1);
+}
 a{
     text-decoration: none;
     /* color: #51d294; */
@@ -87,6 +98,10 @@ a:hover{
 
 nav a:hover{
     color: #20d489; 
+}
+
+#content {
+    /* background-color: rgba(139, 140, 153, 0.08); */
 }
 
 nav ul{
@@ -299,8 +314,10 @@ section{
 }
 
 .project-title{
+    margin-top: 0;
     font-size: 1.2rem;
     margin-bottom: 0px;
+    font-family: 'DM Sans', 'Space Grotesk', 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 .project-title a:hover{
@@ -866,10 +883,14 @@ background-color: #19b674;
 }
 
 .filter label{
+    font-family: 'DM Sans', 'Poppins', "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     padding: .2rem 0.5rem;
     margin: .2rem;
     display: inline-block;
     cursor: pointer;
+    /* border: 1.5px solid #05051b; */
+    border: 1.5px solid rgba(49, 56, 150, 0.1);
+    border-radius: 25px;
 }
 
 
@@ -899,7 +920,6 @@ background-color: #19b674;
 
 .filter label:hover {
     background-color: rgb(224, 226, 228);
-    border: 2px #444;
     border-radius: 25px;
 }
 
