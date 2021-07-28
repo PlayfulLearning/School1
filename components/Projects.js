@@ -106,8 +106,9 @@ export function UpdateThemeInfo(projects, theme){
         <a href="${theme[0].buttonlink}" target="_blank">
             <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${theme[0].buttonlabel}</button>
         </a>
-        </div>
         ${(ResourcesButton(theme[0].resources))}
+        </div>
+        
         <p>${projectNumber} submitted</p>
         
     `
