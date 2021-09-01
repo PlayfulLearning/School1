@@ -100,9 +100,7 @@ a{
 }
 a:hover{
     text-decoration: none;
-    /* background-color: #c1f0d9; */
-    color: #20d489;
-    /* 51d294 */
+    color: #20d489; 
 }
 
 nav a:hover{
