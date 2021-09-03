@@ -1,5 +1,6 @@
 import GetImageURL, {GetTeaserURL} from './Images.js';
 
+// return HTML for project section
 export default function Projects(projects, themes, about){
     return `
     <section id="content">
@@ -17,6 +18,7 @@ export default function Projects(projects, themes, about){
     </section>`;
 }
 
+// show number of projects
 export function DefaultInfo(projects){
     let projectNumber = projects.length;
     return `
@@ -24,6 +26,7 @@ export function DefaultInfo(projects){
     `
 }
 
+// add a submit button
 export function SubmitButton(about){
     return `
         <div class="project-box">
@@ -39,6 +42,7 @@ export function SubmitButton(about){
     `
 }
 
+// return HTML for project items
 export function ProjectItems(about, projects){
     return projects.map(d=>`
         
@@ -65,16 +69,11 @@ export function ProjectItems(about, projects){
     `).join('');
 }
 
-
-
+// filter projects by tags
 export function handleProjectFilter(data){
-    
     let conds = document.querySelectorAll('.filter input[name="project-filter"]');
-    // console.log(conds);
     conds.forEach(cond=>cond.addEventListener('change', function(event){
-        
-        let checked = event.target.value; //Array.from(conds).filter(d=>d.checked).map(d=>d.value);
-        // console.log(checked);
+        let checked = event.target.value; 
         if (checked==='all'){
             document.querySelector('.theme-info').innerHTML = DefaultInfo(data.projects);
             document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, data.projects);
@@ -85,21 +84,17 @@ export function handleProjectFilter(data){
                 d.id = d.hackathon.replace(/ /g, "").toLowerCase();
                 return d.id === checked;
             });
-
             let checkedTheme = data.themes.filter(d=>{
                 d.id = d.name.replace(/ /g, "").toLowerCase();
                 return d.id === checked;
             });
-            // console.log('filteredProjects', filteredProjects);
-            // console.log('checkedTheme', checkedTheme);
             document.querySelector('.theme-info').innerHTML = UpdateThemeInfo(filteredProjects, checkedTheme);
             document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, filteredProjects);
         }
-    
     }));
-    
 }
 
+// show theme information
 export function UpdateThemeInfo(projects, theme){
     let projectNumber = projects.length;
     return `
@@ -113,10 +108,10 @@ export function UpdateThemeInfo(projects, theme){
         </div>
         
         <p class="project-number">${projectNumber} submitted</p>
-        
     `
 }
 
+// add a button for resources
 export function ResourcesButton(resources) {
     if (resources==="") {
         return '';

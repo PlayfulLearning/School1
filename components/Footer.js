@@ -1,3 +1,4 @@
+// return HTML for footer section
 export default function Footer(about){
     return `
         <footer>

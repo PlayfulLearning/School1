@@ -1,5 +1,6 @@
 import GetImageURL, {GetImageArr, GetEmbedVideo} from './Images.js';
 
+// return HTML for about section
 export default function About(about, themes){
     return `
     <section id="about" class="intro">
