@@ -4,7 +4,7 @@ import GetImageURL, {GetTeaserURL} from './Images.js';
 export default function Projects(projects, themes, about){
     return `
     <section id="content">
-        <div id="theme" class="text-wrapper theme-info">
+        <div id="theme" class="text-wrapper">
         ${DefaultInfo(projects)}
         </div>    
 
