@@ -1,7 +1,7 @@
 import GetImageURL, {GetTeaserURL} from './Images.js';
 
 // return HTML for project section
-export default function Projects(projects, category, about){
+export default function Projects(projects, themes, about){
     return `
     <section id="content">
         <div id="theme" class="text-wrapper">
@@ -52,7 +52,7 @@ export function ProjectItems(about, projects){
             <div class="info">
                 <div class="project-overview">
                     <div class="project-theme">
-                        ${d.category}
+                        ${d.theme}
                     </div>
                     <div class="project-title">
                         <a href="?project=${d.title}"><strong>${d.title}</strong></a>
@@ -81,10 +81,10 @@ export function handleProjectFilter(data){
             checked = checked.replace(/ /g, "").toLowerCase();
             let filteredProjects = data.projects.filter(d=>{
                 // return d.id.some(id=>checked === checked.toLowerCase());
-                d.id = d.category.replace(/ /g, "").toLowerCase();
+                d.id = d.theme.replace(/ /g, "").toLowerCase();
                 return d.id === checked;
             });
-            let checkedTheme = data.category.filter(d=>{
+            let checkedTheme = data.themes.filter(d=>{
                 d.id = d.name.replace(/ /g, "").toLowerCase();
                 return d.id === checked;
             });
@@ -95,16 +95,16 @@ export function handleProjectFilter(data){
 }
 
 // show theme information
-export function UpdateThemeInfo(projects, category){
+export function UpdateThemeInfo(projects, themes){
     let projectNumber = projects.length;
     return `
         <div class="theme-container">
-        <h1 class="title">${category[0].name} </h1>
-        <p>${category[0].description}</p>
-        <a href="${category[0].buttonlink}" target="_blank">
-            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${category[0].buttonlabel}</button>
+        <h1 class="title">${themes[0].name} </h1>
+        <p>${themes[0].description}</p>
+        <a href="${themes[0].buttonlink}" target="_blank">
+            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${themes[0].buttonlabel}</button>
         </a>
-        ${(ResourcesButton(category[0].resources))}
+        ${(ResourcesButton(themes[0].resources))}
         </div>
         
         <p class="project-number">${projectNumber} submitted</p>
