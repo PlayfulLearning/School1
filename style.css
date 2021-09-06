@@ -48,6 +48,7 @@ a{
 a:hover{
     text-decoration: none;
     color: #20d489; 
+    cursor: pointer;
 }
 
 footer{
@@ -92,6 +93,7 @@ nav ul{
 
 nav a:hover{
     color: #20d489; 
+    cursor: pointer;
 }
 
 /* || sitewide */
@@ -215,8 +217,9 @@ nav a:hover{
 }
   
 .button:hover {
-background-image: none;
-background-color: #19b674;
+    background-image: none;
+    background-color: #19b674;
+    cursor: pointer;
 }
 
 .tag{
@@ -307,6 +310,7 @@ background-color: #19b674;
 
 .project-title a:hover{
     color: #20d489;
+    cursor: pointer;
 }
 
 .project-info{
