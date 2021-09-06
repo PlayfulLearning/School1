@@ -14,4 +14,3 @@ export default function Navbar(about, items){
         </ul>
     </nav>`
 }
-

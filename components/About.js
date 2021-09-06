@@ -1,124 +1,57 @@
-import GetImageURL, {GetTeaserURL} from './Images.js';
+import GetImageURL, {GetImageArr, GetEmbedVideo} from './Images.js';
 
-// return HTML for project section
-export default function Projects(projects, themes, about){
+// return HTML for about section
+export default function About(about, themes){
     return `
-    <section id="content">
-        <div id="theme" class="text-wrapper">
-        ${DefaultInfo(projects)}
+    <section id="about" class="intro">
+        <div class="text-wrapper">
+            <h1 class="site-title">${about[0].name}</h1>
+                ${ShowHomeImage(about[0].image)}
+        </div>
+    </section>
+    <section id="filter">
+        <div class="text-wrapper">
+            <div class="row filter text-center">
+                <input type="radio" name="project-filter" id="prj-all" value="all" checked>
+                <label for="prj-all">All</label>
+                
+                ${ThemeList(themes)}
+            </div>
         </div>    
-        <div id="projects" class="wrapper">
-            <div class="project-list">
-                ${SubmitButton(about)}
-                ${ProjectItems(about, projects)}
-                </div>
-            </div>
-        </div>
-    </section>`;
+    </section>`
 }
 
-// show number of projects
-export function DefaultInfo(projects){
-    let projectNumber = projects.length;
-    return `
-    <p class="project-number">${projectNumber} submitted</p>
-    `
-}
-
-// add a submit button
-export function SubmitButton(about){
-    return `
-        <div class="project-box">
-            <img src="assets/images/add-placeholder.png" div class="teaser">
-            <div class="info">
-                <div class="project-overview">
-                    <div class="project-title">
-                        <a href="${about[0].form}" target="_blank"><strong>Submit → </strong></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `
-}
-
-// return HTML for project items
-export function ProjectItems(about, projects){
-    return projects.map(d=>`
-        
-        <div class="project-box">
-            
-            <img src="${(GetTeaserURL(d.images))}" div class="teaser">
-            <div class="info">
-                <div class="project-overview">
-                    <div class="project-theme">
-                        ${d.theme}
-                    </div>
-                    <div class="project-title">
-                        <a href="?project=${d.title}"><strong>${d.title}</strong></a>
-                    </div>
-                    <div class="project-subtitle">
-                        ${d.subtitle}
-                    </div>
-                    <div class="project-authors">
-                        By ${d.authors}
-                    </div>
-                </div>    
-            </div>
-        </div> 
-    `).join('');
-}
-
-// filter projects by tags
-export function handleProjectFilter(data){
-    let conds = document.querySelectorAll('.filter input[name="project-filter"]');
-    conds.forEach(cond=>cond.addEventListener('change', function(event){
-        let checked = event.target.value; 
-        if (checked==='all'){
-            document.querySelector('.theme-info').innerHTML = DefaultInfo(data.projects);
-            document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, data.projects);
-        }else{
-            checked = checked.replace(/ /g, "").toLowerCase();
-            let filteredProjects = data.projects.filter(d=>{
-                // return d.id.some(id=>checked === checked.toLowerCase());
-                d.id = d.hackathon.replace(/ /g, "").toLowerCase();
-                return d.id === checked;
-            });
-            let checkedTheme = data.themes.filter(d=>{
-                d.id = d.name.replace(/ /g, "").toLowerCase();
-                return d.id === checked;
-            });
-            document.querySelector('.theme-info').innerHTML = UpdateThemeInfo(filteredProjects, checkedTheme);
-            document.querySelector('.project-list').innerHTML = SubmitButton(data.about) + ProjectItems(data.about, filteredProjects);
-        }
-    }));
-}
-
-// show theme information
-export function UpdateThemeInfo(projects, theme){
-    let projectNumber = projects.length;
-    return `
-        <div class="theme-container">
-        <h1 class="title">${theme[0].name} </h1>
-        <p>${theme[0].description}</p>
-        <a href="${theme[0].buttonlink}" target="_blank">
-            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${theme[0].buttonlabel}</button>
-        </a>
-        ${(ResourcesButton(theme[0].resources))}
-        </div>
-        
-        <p class="project-number">${projectNumber} submitted</p>
-    `
-}
-
-// add a button for resources
-export function ResourcesButton(resources) {
-    if (resources==="") {
+export function ShowHomeImage(image){
+    if (image==="") {
         return '';
     }else {
-    return `
-    <a href="${resources}" target="_blank">
-        <button class="button" style="margin-top: 30px; margin-bottom: 50px;">Resources</button>
-    </a>
-    `
+        return `<img src="${GetImageURL(image)}" div class="project-teaser">`;
     }
+}
+
+export function ThemeDropdown(themes){
+    return `
+    <div class="dropdown">
+        <button onclick="showThemes()" class="dropbtn">Choose Theme ↓ </button>
+        <div id="myDropdown" class="dropdown-content">
+            ${ThemeItems(themes)}
+        </div>
+    </div>`
+}
+
+export function ShowThemes() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+export function ThemeItems(themes) {
+    return themes.map(d=>`
+        <a href="#home">${(d.name)}</a>
+        `).join('');
+}
+
+export function ThemeList(themes){
+    return themes.map(d=>`
+        <input type="radio" name="project-filter" id="prj-${d.name}" value="${d.name}" >
+        <label for="prj-${d.name}">${d.name}</label>
+    `).join('');
 }

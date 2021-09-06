@@ -4,10 +4,9 @@ import GetImageURL, {GetTeaserURL} from './Images.js';
 export default function Projects(projects, themes, about){
     return `
     <section id="content">
-        <div id="theme" class="text-wrapper">
+        <div id="theme" class="text-wrapper theme-info">
         ${DefaultInfo(projects)}
         </div>    
-
         <div id="projects" class="wrapper">
             <div class="project-list">
                 ${SubmitButton(about)}
@@ -95,16 +94,16 @@ export function handleProjectFilter(data){
 }
 
 // show theme information
-export function UpdateThemeInfo(projects, themes){
+export function UpdateThemeInfo(projects, theme){
     let projectNumber = projects.length;
     return `
         <div class="theme-container">
-        <h1 class="title">${themes[0].name} </h1>
-        <p>${themes[0].description}</p>
-        <a href="${themes[0].buttonlink}" target="_blank">
-            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${themes[0].buttonlabel}</button>
+        <h1 class="title">${theme[0].name} </h1>
+        <p>${theme[0].description}</p>
+        <a href="${theme[0].buttonlink}" target="_blank">
+            <button class="button" style="margin-top: 30px; margin-bottom: 50px;">${theme[0].buttonlabel}</button>
         </a>
-        ${(ResourcesButton(themes[0].resources))}
+        ${(ResourcesButton(theme[0].resources))}
         </div>
         
         <p class="project-number">${projectNumber} submitted</p>

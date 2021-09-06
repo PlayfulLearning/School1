@@ -13,4 +13,3 @@ export default function MainPage(data){
     `
     handleProjectFilter(data);
 }
-
