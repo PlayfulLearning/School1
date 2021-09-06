@@ -1,7 +1,7 @@
 import GetImageURL, {GetImageArr, GetEmbedVideo} from './Images.js';
 
 // return HTML for about section
-export default function About(about, themes){
+export default function About(about, category){
     return `
     <section id="about" class="intro">
         <div class="text-wrapper">
@@ -15,7 +15,7 @@ export default function About(about, themes){
                 <input type="radio" name="project-filter" id="prj-all" value="all" checked>
                 <label for="prj-all">All</label>
                 
-                ${ThemeList(themes)}
+                ${CategoryList(category)}
 
             </div>
         </div>    
@@ -30,28 +30,28 @@ export function ShowHomeImage(image){
     }
 }
 
-export function ThemeDropdown(themes){
+export function CategoryDropdown(category){
     return `
     <div class="dropdown">
         <button onclick="showThemes()" class="dropbtn">Choose Theme ↓ </button>
         <div id="myDropdown" class="dropdown-content">
-            ${ThemeItems(themes)}
+            ${CategoryItems(category)}
         </div>
     </div>`
 }
 
-export function ShowThemes() {
+export function ShowCategories() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-export function ThemeItems(themes) {
-    return themes.map(d=>`
+export function CategoryItems(category) {
+    return category.map(d=>`
         <a href="#home">${(d.name)}</a>
         `).join('');
 }
 
-export function ThemeList(themes){
-    return themes.map(d=>`
+export function CategoryList(category){
+    return category.map(d=>`
         <input type="radio" name="project-filter" id="prj-${d.name}" value="${d.name}" >
         <label for="prj-${d.name}">${d.name}</label>
 

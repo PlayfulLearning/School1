@@ -7,8 +7,8 @@ import Projects, {ProjectItems, handleProjectFilter} from './Projects.js';
 export default function MainPage(data){
     document.querySelector('.container').innerHTML = `
         ${Navbar(data.about)}
-        ${About(data.about, data.themes)}
-        ${Projects(data.projects, data.themes, data.about)}
+        ${About(data.about, data.category)}
+        ${Projects(data.projects, data.category, data.about)}
         ${Footer(data.about)}
     `
     handleProjectFilter(data);

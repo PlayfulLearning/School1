@@ -8,8 +8,8 @@ Promise.all([
       d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSNhuYWG4ylr1-xZSDcBunRrKJyLqPIC37VOGoW8QG0Knve2YeIem2az2t0vVXz1769WALBxjs3U_J2/pub?output=csv"),
       d3.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQFY7mscoie7ADrYeLpnUwHhA3wDZ9lF0Go-n-q_IT2m-2BrtcZ9bvAv8PSIsQBjAFy_4YypxLRmj9U/pub?output=csv"),
       ])
-      .then(([about, themes, projects]) => {
-        const data = {about, themes, projects};
+      .then(([about, category, projects]) => {
+        const data = {about, category, projects};
         console.log(data);
 
     // determine what page to render

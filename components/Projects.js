@@ -52,7 +52,7 @@ export function ProjectItems(about, projects){
             <div class="info">
                 <div class="project-overview">
                     <div class="project-theme">
-                        ${d.hackathon}
+                        ${d.category}
                     </div>
                     <div class="project-title">
                         <a href="?project=${d.title}"><strong>${d.title}</strong></a>
@@ -81,7 +81,7 @@ export function handleProjectFilter(data){
             checked = checked.replace(/ /g, "").toLowerCase();
             let filteredProjects = data.projects.filter(d=>{
                 // return d.id.some(id=>checked === checked.toLowerCase());
-                d.id = d.hackathon.replace(/ /g, "").toLowerCase();
+                d.id = d.category.replace(/ /g, "").toLowerCase();
                 return d.id === checked;
             });
             let checkedTheme = data.themes.filter(d=>{
