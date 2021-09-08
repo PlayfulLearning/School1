@@ -60,11 +60,12 @@ footer{
 }
 
 pre {
-    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: pre;       /* Since CSS 2.1 */
     display: flex-root;
     clear: both;
-    width: 100%;
+    width: 480px;
     background: #eee;
+    border-radius: 15px;
 }
 
 code {
@@ -861,13 +862,14 @@ nav a:hover{
         text-align: right;
     }
     .project-img-holder{flex-basis: 49%;}
-
+    
 
 }
 
 @media only screen and (max-width: 768px) {
     .footer-content {width: 80%;}
     .project-img-holder:nth-child(1n) {margin-right: 0;}
+    pre {width: 80vw}
 }
 
 @media screen and (max-width: 700px){
