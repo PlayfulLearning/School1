@@ -65,11 +65,11 @@ pre {
     clear: both;
     width: 480px;
     background: #eee;
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 code {
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 /* || header and main navigation */
@@ -869,14 +869,14 @@ nav a:hover{
 @media only screen and (max-width: 768px) {
     .footer-content {width: 80%;}
     .project-img-holder:nth-child(1n) {margin-right: 0;}
-    pre {width: 80vw}
+    pre {width: 40vw}
 }
 
-@media screen and (max-width: 700px){
-    .box{
-        width: 70%;
-    }
-    .modal{
-        width: 70%;
-    }
+
+@media only screen and (max-width: 768px) {
+    .footer-content {width: 80%;}
+    .project-img-holder:nth-child(1n) {margin-right: 0;}
+    pre {width: 80vw}
+    .box{width: 70%;}
+    .modal{width: 70%;}
 }
