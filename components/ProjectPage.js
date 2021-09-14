@@ -79,7 +79,7 @@ export function CodeSnippet(code){
     }else {
         return `
         <h4>Code</h4>
-            <pre><code class="python">${code}</code></pre>
+            <pre><code class="python hljs language-python">${code}</code></pre>
         `;
     }
 }
