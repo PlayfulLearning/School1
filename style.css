@@ -245,6 +245,11 @@ nav a:hover{
     color: #a7a6a6;
 }
 
+.more-projects{
+    font-family: 'DM Sans', 'Helvetica', sans-serif;
+    text-align: center;
+}
+
 .project-items{
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
@@ -327,7 +332,7 @@ nav a:hover{
 }
 
 .project-intro{
-    border-bottom: 1px solid rgba(30, 33, 83, 0.1);
+    /* border-bottom: 1px solid rgba(30, 33, 83, 0.1); */
     padding-bottom: 50px;
 }
 

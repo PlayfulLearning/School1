@@ -252,14 +252,19 @@ export function SetGallery(){
 
 // display related projects
 export function RelatedProjects(filter, projects){
+    console.log(projects[0]);
+    if (projects[0] == undefined){
+        return "";
+    }else{
     return `
     <section id="related-projects" class="related-projects">
-    <div class="wrapper">
-    <p class="project-number">View more in <strong>${filter}</strong></p>
-        <div class="project-list">
-            ${ProjectItems(projects)}
+        <div class="content-wrapper">
+        <p class="more-projects">You Might Also Like</p>
+            <div class="project-list">
+                ${ProjectItems(projects)}
+            </div>
         </div>
-    </div>
     </section>
     `
+    }
 }
