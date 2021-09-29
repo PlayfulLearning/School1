@@ -328,6 +328,7 @@ nav a:hover{
 
 .project-intro{
     border-bottom: 1px solid rgba(30, 33, 83, 0.1);
+    padding-bottom: 50px;
 }
 
 #related-projects{
