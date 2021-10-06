@@ -336,8 +336,9 @@ nav a:hover{
     padding-bottom: 50px;
 }
 
-#related-projects{
+.related-projects{
     background:rgb(241, 241, 241);
+    padding-bottom: 50px;
 }
 
 #people {
